@@ -4,37 +4,30 @@
   
   
   <entry>
-    <title>不定期随笔集</title>
+    <title>ACTF2023逆向复现</title>
+    <link href="/2023/11/02/ACTF2023%E9%80%86%E5%90%91%E5%A4%8D%E7%8E%B0/"/>
+    <url>/2023/11/02/ACTF2023%E9%80%86%E5%90%91%E5%A4%8D%E7%8E%B0/</url>
+    
+    <content type="html"><![CDATA[<p>ACTF爆零了，我承认确实在这个比赛上面花的时间不够多，老是想着有大哥在做，我就上来看看题（这个想法还是有些错误❌ 以后还是多坐坐牢吧，555~😭</p><p>尽可能复现一下（（</p><h2 id="1-qemu-playground-1"><a href="#1-qemu-playground-1" class="headerlink" title="1.qemu-playground-1"></a><strong>1.qemu-playground-1</strong></h2><blockquote><p><strong>Description:</strong></p><p>A check-in reverse challenge in qemu</p><p><strong>Download:</strong></p><p>Google drive: <a href="https://drive.google.com/file/d/1pM7fVJnbGB5rg7uddlytHaWbou9K5M70/view?usp=sharing">qemu-playgr0-ound.zip</a></p></blockquote><p>第一次接触qemu是在，cnss去年的招新题，让我用Arm64去运行一个程序，第一次得知arm是另一种架构，得用qemu来搭模拟机</p><p>第二次是这次，直接用qemu来出题了，这下不得不好好了解一下了</p><p><a href="https://arttnba3.cn/2022/07/15/VIRTUALIZATION-0X00-QEMU-PART-I/#%E4%B8%80%E3%80%81Qemu-Object-Model">先看看协会里a3大哥写的qemu博客</a></p><p>看完能了解到这几个点：1.qemu-system_x86-64这个是Qemu的本体，<code>system_x86-64</code>这个后缀的意思是自己在编译的时候自己指定的架构和CPU，知道这个是本体就Ok了。</p><p>​2.bzImage这个是内核镜像文件。</p><p>​3.</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>CTF复现</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>《不定期随笔集》</title>
     <link href="/2023/11/02/%E4%B8%8D%E5%AE%9A%E6%9C%9F%E9%9A%8F%E7%AC%94%E9%9B%86/"/>
     <url>/2023/11/02/%E4%B8%8D%E5%AE%9A%E6%9C%9F%E9%9A%8F%E7%AC%94%E9%9B%86/</url>
     
-    <content type="html"><![CDATA[<h3 id="10-31"><a href="#10-31" class="headerlink" title="10&#x2F;31"></a>10&#x2F;31</h3><p>感觉自己8太适合写博客，因为👴要是觉得写一些东西给别人看，那么确实得好好写点东西，但是👴觉得就很怪，感觉说啥都8太对，可能跟👴的性格有点关系。</p><p>之前军训的时候问过dr3的博客一些问题，他说他的博客就是给自己看的，👴觉得说的对，👴也要这样想，或许根本就没人看我的博客呢，那👴不是想写啥就写啥了🐎 <del>精神胜利法</del></p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>moectf2023出题记录</title>
-    <link href="/2023/10/23/moectf2023%E5%87%BA%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
-    <url>/2023/10/23/moectf2023%E5%87%BA%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
-    
-    <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>其实，我觉得吧</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>博客起步的初衷</title>
-    <link href="/2023/09/05/%E5%85%88%E6%94%BE%E4%B8%AA%E5%9E%83%E5%9C%BE%E5%9C%A8%E8%BF%99%E9%87%8C/"/>
-    <url>/2023/09/05/%E5%85%88%E6%94%BE%E4%B8%AA%E5%9E%83%E5%9C%BE%E5%9C%A8%E8%BF%99%E9%87%8C/</url>
-    
-    <content type="html"><![CDATA[<h3 id="1-博客"><a href="#1-博客" class="headerlink" title="1.博客"></a>1.博客</h3><p>大一的时候搞了这个博客，做了几道题，放了两个wp，然后就没了，那两道题连tiele都没有（乐<br>博客其实相当于一个记事本，有时候学的东西写在这里，可以用来复习<br>ok我现在决心学点东西，那这个博客就有必要了<br>现在还什么都不清楚，分类，优化啥的，不过这都是后话了，主要还是得写点东西</p><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs haxe">hexo cl 清除缓存 <br>hexo g 生成页面<br>hexo s 启动本地<br>hexo d 上传github<br>hexo <span class="hljs-keyword">new</span> <span class="hljs-type">post</span> <span class="hljs-string">&quot;xxx&quot;</span> 新建文章xxx 要在_posts文件夹下<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[]]></content>
     
     
     
