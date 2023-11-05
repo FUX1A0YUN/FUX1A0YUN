@@ -24,7 +24,7 @@
 <meta property="og:description" content="ACTF爆零了，我承认确实在这个比赛上面花的时间不够多，老是想着有大哥在做，我就上来看看题（这个想法还是有些错误❌ 以后还是多坐坐牢吧，555~😭 尽可能复现一下（（ 1.qemu-playground-1 Description: A check-in reverse challenge in qemu Download: Google drive: qemu-playgr0-ound.zip">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-01T16:20:09.000Z">
-<meta property="article:modified_time" content="2023-11-01T18:21:23.338Z">
+<meta property="article:modified_time" content="2023-11-05T14:08:07.523Z">
 <meta property="article:author" content="FUX1AOYUN">
 <meta property="article:tag" content="CTF复现">
 <meta name="twitter:card" content="summary_large_image">
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          418 字
+          443 字
         
       </span>
     
@@ -284,9 +284,9 @@
 <p>第一次接触qemu是在，cnss去年的招新题，让我用Arm64去运行一个程序，第一次得知arm是另一种架构，得用qemu来搭模拟机</p>
 <p>第二次是这次，直接用qemu来出题了，这下不得不好好了解一下了</p>
 <p><a target="_blank" rel="noopener" href="https://arttnba3.cn/2022/07/15/VIRTUALIZATION-0X00-QEMU-PART-I/#%E4%B8%80%E3%80%81Qemu-Object-Model">先看看协会里a3大哥写的qemu博客</a></p>
-<p>看完能了解到这几个点：1.qemu-system_x86-64这个是Qemu的本体，<code>system_x86-64</code>这个后缀的意思是自己在编译的时候自己指定的架构和CPU，知道这个是本体就Ok了。</p>
-<p>​										2.bzImage这个是内核镜像文件。</p>
-<p>​										3.</p>
+<p>大概先了解到这几个点：1.qemu-system_x86-64这个是Qemu的本体，<code>system_x86-64</code>这个后缀的意思是自己在编译的时候自己指定的架构和CPU，知道这个是本体就Ok了。</p>
+<p>​										2.bzImage这个是内核镜像文件，逆向的时候不用管</p>
+<p>​										3.得稍微了解一下，mmio和pmio</p>
 
                 
               </div>
@@ -355,6 +355,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2023/11/05/moectf2023%E9%80%86%E5%90%91/" title="moectf2023逆向">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">moectf2023逆向</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
