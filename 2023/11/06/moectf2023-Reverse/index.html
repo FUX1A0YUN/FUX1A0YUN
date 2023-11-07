@@ -16,21 +16,21 @@
   <meta name="author" content="FUX1AOYUN">
   <meta name="keywords" content="">
   
-    <meta name="description" content="MoeCTF2023_Rebase_64  pyc反编译把base_64.pyc反编译得到python代码  1234567891011121314151617#!&#x2F;usr&#x2F;bin&#x2F;env python# visit https:&#x2F;&#x2F;tool.lu&#x2F;pyc&#x2F; for more information# Version: Python 3.7import base64from string impo">
+    <meta name="description" content="moectf2023wp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="moectf2023-Reverse">
 <meta property="og:url" content="http://example.com/2023/11/06/moectf2023-Reverse/index.html">
 <meta property="og:site_name" content="FUX1AOYUN hopes you like this!">
-<meta property="og:description" content="MoeCTF2023_Rebase_64  pyc反编译把base_64.pyc反编译得到python代码  1234567891011121314151617#!&#x2F;usr&#x2F;bin&#x2F;env python# visit https:&#x2F;&#x2F;tool.lu&#x2F;pyc&#x2F; for more information# Version: Python 3.7import base64from string impo">
+<meta property="og:description" content="moectf2023wp">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2023/11/06/moectf2023-Reverse/moe23_base64.jpg">
 <meta property="og:image" content="http://example.com/2023/11/06/moectf2023-Reverse/moe23_upx.jpg">
 <meta property="og:image" content="http://example.com/2023/11/06/moectf2023-Reverse/moe23_equation.jpg">
 <meta property="og:image" content="http://example.com/2023/11/06/moectf2023-Reverse/moe23_rc4.jpg">
 <meta property="article:published_time" content="2023-11-06T08:37:12.000Z">
-<meta property="article:modified_time" content="2023-11-06T08:59:41.637Z">
+<meta property="article:modified_time" content="2023-11-07T02:56:11.654Z">
 <meta property="article:author" content="FUX1AOYUN">
-<meta property="article:tag" content="CTF">
+<meta property="article:tag" content="CTF复现">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/2023/11/06/moectf2023-Reverse/moe23_base64.jpg">
   
@@ -236,7 +236,7 @@
         
         
         
-          124 分钟
+          125 分钟
         
       </span>
     
@@ -278,7 +278,10 @@
             
               <div class="markdown-body">
                 
-                <h2 id="MoeCTF2023-Re"><a href="#MoeCTF2023-Re" class="headerlink" title="MoeCTF2023_Re"></a>MoeCTF2023_Re</h2><h2 id="base-64"><a href="#base-64" class="headerlink" title="base_64"></a>base_64</h2><blockquote>
+                <p>moectf2023wp</p>
+<span id="more"></span>
+
+<h2 id="MoeCTF2023-Re"><a href="#MoeCTF2023-Re" class="headerlink" title="MoeCTF2023_Re"></a>MoeCTF2023_Re</h2><h2 id="base-64"><a href="#base-64" class="headerlink" title="base_64"></a>base_64</h2><blockquote>
 <p> <a target="_blank" rel="noopener" href="https://tool.lu/pyc/">pyc反编译</a>把<code>base_64.pyc</code>反编译得到python代码</p>
 </blockquote>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-comment">#!/usr/bin/env python</span><br><span class="hljs-comment"># visit https://tool.lu/pyc/ for more information</span><br><span class="hljs-comment"># Version: Python 3.7</span><br><br>import base64<br>from string import *<br>str1 = <span class="hljs-string">&#x27;yD9oB3Inv3YAB19YynIuJnUaAGB0um0=&#x27;</span><br>string1 = <span class="hljs-string">&#x27;ZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcba0123456789+/&#x27;</span><br>string2 = <span class="hljs-string">&#x27;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&#x27;</span><br>flag = input(<span class="hljs-string">&#x27;welcome to moectf\ninput your flag and I wiil check it:&#x27;</span>)<br>enc_flag = base64.b64encode(flag.encode()).decode()<br>enc_flag = enc_flag.translate(str.maketrans(string2, string1))<br><span class="hljs-keyword">if</span> enc_flag == str1:<br>    print(<span class="hljs-string">&#x27;good job!!!!&#x27;</span>)<br><span class="hljs-keyword">else</span>:<br>    print(<span class="hljs-string">&#x27;something wrong???&#x27;</span>)<br>    <span class="hljs-keyword">exit</span>(<span class="hljs-number">0</span>)<br></code></pre></td></tr></table></figure>
@@ -315,8 +318,9 @@
 <p>但是jz跳到了<code>loc_460612+1</code>这里，没有执行<code>e8</code>这个字节，所以e8是花指令，nop掉即可</p>
 <p>第二个函数的花指令，也是强制跳转，但这次是最经典的jz和jnz复用，必跳转，也是nop掉<code>e8</code>即可</p>
 <p>之后在函数开头按p恢复函数，就可以看清楚伪代码逻辑🌶</p>
-<p>之后前半段flag位移5，后半段flag异或0x66得到flag</p>
-<h2 id="GUI"><a href="#GUI" class="headerlink" title="GUI"></a>GUI</h2><p>先睡觉，明天写ZZZ</p>
+<p>两个函数一个前半段flag位移5，一个后半段flag异或0x66，拼接得到flag</p>
+<h2 id="GUI"><a href="#GUI" class="headerlink" title="GUI"></a>GUI</h2><p>出这道题是因为出题人去年打完moe之后的第一个比赛就遇到了gui程序，直接给人干傻了，所以想出一道最最简单gui来给大伙助助兴</p>
+<p>在解这道题之前得稍微了解一下windows消息处理机制，因为这题的gui是win32写的（❌</p>
 
                 
               </div>
@@ -329,7 +333,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/CTF/" class="print-no-link">#CTF</a>
+        <a href="/tags/CTF%E5%A4%8D%E7%8E%B0/" class="print-no-link">#CTF复现</a>
       
     </div>
   
