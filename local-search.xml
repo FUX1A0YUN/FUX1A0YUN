@@ -4,6 +4,38 @@
   
   
   <entry>
+    <title>Thead Study</title>
+    <link href="/2024/03/18/Thead-Study/"/>
+    <url>/2024/03/18/Thead-Study/</url>
+    
+    <content type="html"><![CDATA[<h2 id="1-Thead线程库的基本使用"><a href="#1-Thead线程库的基本使用" class="headerlink" title="1.Thead线程库的基本使用"></a>1.Thead线程库的基本使用</h2><blockquote><p> 区分线程和进程：什么是进程，进程是运行中的程序，线程可以理解是进程中的进程</p></blockquote><p>单线程程序是串性的，从上往下依次执行。而多线程程序是并行的，可以提高程序的运行效率，线程的最大数量取决于cpu的核心数。</p><h3 id="创建线程"><a href="#创建线程" class="headerlink" title="创建线程"></a>创建线程</h3><p>一个最基本的线程创建的方法：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;thread&gt;</span></span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">print_helloworld</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>std::cout &lt;&lt; <span class="hljs-string">&quot;Hello World&quot;</span> &lt;&lt; std::endl;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br><span class="hljs-comment">//1.thead crate</span><br><span class="hljs-function">std::thread <span class="hljs-title">thread1</span><span class="hljs-params">(print_helloworld)</span></span>;<br><br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><p>运行时发现报错了，这是因为主线程执行结束退出了，而我们创建的线程却还在运行，此时程序会报错；</p><h3 id="等待线程完成"><a href="#等待线程完成" class="headerlink" title="等待线程完成"></a>等待线程完成</h3><p>join()可以用来等待线程执行完毕，主程序不会立即退出，会检查其他线程是否执行了return，如果未执行，则会等待；</p><p>换句话说join阻塞了main()函数执行；</p><p>当我们加上这一句后再运行程序，报错消失了；</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;thread&gt;</span></span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">print_helloworld</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>std::cout &lt;&lt; <span class="hljs-string">&quot;Hello World&quot;</span> &lt;&lt; std::endl;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br><span class="hljs-comment">//1.thead crate</span><br><span class="hljs-function">std::thread <span class="hljs-title">thread1</span><span class="hljs-params">(print_helloworld)</span></span>;<br>thread1.<span class="hljs-built_in">join</span>();<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="线程传参"><a href="#线程传参" class="headerlink" title="线程传参"></a>线程传参</h3><p>给线程传递参数时需要在线程创建时就为其添加参数；</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function">std::thread <span class="hljs-title">thread1</span><span class="hljs-params">(print_helloworld,<span class="hljs-string">&quot;hello Thread&quot;</span>)</span></span>;<br></code></pre></td></tr></table></figure><h3 id="else"><a href="#else" class="headerlink" title="else"></a>else</h3><p>detach()可以让主线程正常退出不报错，运行完main()之后销毁thread1;</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">thread1.<span class="hljs-built_in">detach</span>();<br></code></pre></td></tr></table></figure><p>joinable(),detachable()都是检查函数是否可以开启进程的方法，返回bool值</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c++">isJoin=thread1.<span class="hljs-built_in">joinable</span>()<br><span class="hljs-keyword">if</span> (isJoin)<br>&#123;<br>thread1.<span class="hljs-built_in">join</span>();<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="2-线程函数中的数据未定义错误"><a href="#2-线程函数中的数据未定义错误" class="headerlink" title="2.线程函数中的数据未定义错误"></a>2.线程函数中的数据未定义错误</h2><h3 id="传递临时变量"><a href="#传递临时变量" class="headerlink" title="传递临时变量"></a>传递临时变量</h3>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>study</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>天枢ctf-WP</title>
+    <link href="/2024/03/18/%E5%A4%A9%E6%9E%A2ctf-WP/"/>
+    <url>/2024/03/18/%E5%A4%A9%E6%9E%A2ctf-WP/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>li_diary</title>
     <link href="/2024/01/12/emo-diary/"/>
     <url>/2024/01/12/emo-diary/</url>

@@ -16,21 +16,22 @@
   <meta name="author" content="FUX1AOYUN">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
+    <meta name="description" content="1.Thead线程库的基本使用  区分线程和进程：什么是进程，进程是运行中的程序，线程可以理解是进程中的进程  单线程程序是串性的，从上往下依次执行。而多线程程序是并行的，可以提高程序的运行效率，线程的最大数量取决于cpu的核心数。 创建线程一个最基本的线程创建的方法： 12345678910111213#include&lt;iostream&gt;#include&lt;thread&gt;v">
 <meta property="og:type" content="article">
-<meta property="og:title" content="li_diary">
-<meta property="og:url" content="http://example.com/2024/01/12/emo-diary/index.html">
+<meta property="og:title" content="Thead Study">
+<meta property="og:url" content="http://example.com/2024/03/18/Thead-Study/index.html">
 <meta property="og:site_name" content="FUX1AOYUN hopes you like this!">
-<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:description" content="1.Thead线程库的基本使用  区分线程和进程：什么是进程，进程是运行中的程序，线程可以理解是进程中的进程  单线程程序是串性的，从上往下依次执行。而多线程程序是并行的，可以提高程序的运行效率，线程的最大数量取决于cpu的核心数。 创建线程一个最基本的线程创建的方法： 12345678910111213#include&lt;iostream&gt;#include&lt;thread&gt;v">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-01-12T11:57:44.000Z">
-<meta property="article:modified_time" content="2024-01-12T12:19:09.403Z">
+<meta property="article:published_time" content="2024-03-18T12:00:50.000Z">
+<meta property="article:modified_time" content="2024-03-18T12:47:59.530Z">
 <meta property="article:author" content="FUX1AOYUN">
+<meta property="article:tag" content="study">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>li_diary - FUX1AOYUN hopes you like this!</title>
+  <title>Thead Study - FUX1AOYUN hopes you like this!</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -208,7 +209,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="li_diary"></span>
+            <span id="subtitle" data-typed-text="Thead Study"></span>
           
         </div>
 
@@ -219,8 +220,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-01-12 19:57" pubdate>
-          2024年1月12日 晚上
+        <time datetime="2024-03-18 20:00" pubdate>
+          2024年3月18日 晚上
         </time>
       </span>
     
@@ -231,7 +232,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.5k 字
+          1.1k 字
         
       </span>
     
@@ -242,7 +243,7 @@
         
         
         
-          30 分钟
+          9 分钟
         
       </span>
     
@@ -279,30 +280,48 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">li_diary</h1>
+            <h1 id="seo-header">Thead Study</h1>
             
             
-              
-              <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="0490a0e9ca043ab2bdace795a851d72ed93a803c9fd07a592afa2f2207398afd">1e943eb6df8bdad93581f0a96e0efd158218a50e87638476480ecceec21798f31c5bd3a10125374990a546b0d3b7ab9439e47a3f06a6df2a479e336d5904a185a6d57884d2a27e28ed0c227b73195fe8c6476efce1ac7aacae7fa90e2d133f52be03ff94ecb3a4375ef1293d5eda266318d4f29fbff71b443bfc33b58d136b50fca124f5ad75eb51757077f481096b2be6a8703b0875e7882e27822766f34b86bc1f2ac711ab5165a1f4fe989561f23cbab08e76c706bf630fd118ab8f71c5c541348cf21b98b5fbe61087dbcef72b75116da1004bbd1dfab479d22d664791ed1d6b35fccd9e282e567c884f4bd99ed4bbc8f8bbdbcba83448818fe1f919ccab73bf13477fdb4de0f355fea3940319920247055088711931fdb8c49b5036adf8bc1c1e68a5efbf137a8a4c562a453d0888cc68fa5ef0b814f17bd25400d26ec095da133da19849ccdc1993a5e3cd477512eb7256380c88f63ab81e090946d9912a009cab8c240f0c4389bca08a8d3ca172c4228691eab26d8b149aa88d064d2c4d2ad9c4d270430be64c4e226e10fff2b4d8d75398cf4f44964c63608c6f57622fa88f913353a94f0d16fa24fb0b2d1c923aaafadb51a063ac0bf85059a1eb3b1ca8094baf232c9f33dd326e2e6a90b4d5d21ef69eb8afdc7b76a3a0d532e3befba905352d07ab6cc620d286295d74170132c4bb91d7d0cc6a407daca82129a783ebd4203402af49bfccfe8d3dc1e27b01b282d100f2b9ed94d63ac60ab54f7731dd02e427abf34492add5bb85f06304292fc1526edd528ad634184eeb6c0b7ca44f01e014cc73a0103c4bddeb2cb68aee42790f8204ce54958391d9b837711dc6e4115056e71dffa5b56eaedd8be496344ab2d556554b0ea46b5184caf543eb344c2e134ab14aa2c2b36ebd8780b996cbd025cb1c51fc1bcaad11fd16584f4a23f581adb9692d7118f2006d28fd301178c1db955142050029c499462c2f098b1af6ac6f052398359042a911f9befc64236a78f07ef3f6b6038ff7ad5ee11325af7e666cf8cce76505d69305edafcab9b9aed87c0ffb3287673c70d97e91d23e15889029a6e78d67024f7cef3fceea2e65c70e11d08607d101f8ef311fcb41c03924a0ed267ce9376fb8afb547c21dfe3199576756f8593afc1b7251e69c9f30fd62a48500ab75697010a46ff17d0e90f768ab0445f6e41b622f92e7af73b4e70ba7532e14788930607beee67aa7f28f312813df414ff9ae328dd6d677fb5b6b01a94e7d20978d2972caf83b7596db42665a9e4f29137363112f4987c043f9391b7bf867476be41042a1cb527eb2bd095e072a296592b28ea40f22a5e1db2def1994f1229e05228dbe877c9873cb1c09c60e9af4265355df17f7b46f1b69be9ba156543f86d668798e9ce5c91bc50250a4920e23583194cafbb8bdc5d8e586b806dca9b685e2b9ce7e1057f04d73687dffe228a7e3a4140862f2b984c59be62fcd393aa91435bb08a1dfe139d70e4883562b6fbf967f9e2331d90e3faae705102df95c46439446804fa29815afff89cc7d687de42173c6628f1587cd913d17d8a106113ad1eb4d2d10d998ff862a5d1d8c3d4a4decd3ed02c1238da72affd5a0bd03b3711ae28630abe5eed73dee2c00c51ab0ed3d76773a328c228500e951ced1de038e6e97a4a7684dbe3e9d50afa0372aa7dad2e04d5b4ec3913d0459b42447b45b2d26af8a2764c4e0a5284f6994d01f60d6d46176ab681476b5f010bd29b83ebc15bb217153f040cd970de76c0959847b61e713d2cccca1c863d61b74b440a058d16146e8c6b52d761eb1ce6eb3fb4ef5115f078e9373318f7ffd9ef174a749a3d8fcdb94f2c43ce0060d9401e38dd0936df358b8ffb1276bb5ac15dc6c2ea85a59cc748d289df44502dfadcc297ffcae6233f11eb23b0c032d7d839409914ccceee0ad291e364bd03989962863614a154b59dd4935263cca4601300f7ca69e5f3ce2b69cbb5f09b9b12cfd8f4c53d14c66c0b17b5e2dd46417b4d9f549c0adcca1f6077c78169724eba30d577a8a1ad340e4b2ba3442fdd9f1442c0ba7e827da68644617e2aa3e07a164c1c3d1f6b88a2bd85ab319eb1e3715215c3e5728eb69fd7ee79deafc80c77e572ddc0a25040ab99fb3bed8a88c4e3f2977b17b1ea8d73c52ba92ffedef1960af3e2fc5d8f47568503a2cecaa48948acb1424867e6155d869d7007b54c160ef7921e46065652d2f5c3d9447f3f2436510a8b0d63ccf7e3c4ea9d7d9dfdb8663fd86b07e8c6432b0e804c4afc654c2d2fbf2fa6b2d2b8276bf2263f9c32e4c06457331ae731231d8d49134333aa3d51195f63aff8081a7d9e870bab2381cc0a0ccc408e4194237ed9540dc2396465747afc2e509a862939a8e0721c96073d9d81de8bd5c94352a4b49c51b47c70b63dada39274f</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
-              
+              <div class="markdown-body">
+                
+                <h2 id="1-Thead线程库的基本使用"><a href="#1-Thead线程库的基本使用" class="headerlink" title="1.Thead线程库的基本使用"></a>1.Thead线程库的基本使用</h2><blockquote>
+<p> 区分线程和进程：什么是进程，进程是运行中的程序，线程可以理解是进程中的进程</p>
+</blockquote>
+<p>单线程程序是串性的，从上往下依次执行。而多线程程序是并行的，可以提高程序的运行效率，线程的最大数量取决于cpu的核心数。</p>
+<h3 id="创建线程"><a href="#创建线程" class="headerlink" title="创建线程"></a>创建线程</h3><p>一个最基本的线程创建的方法：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;thread&gt;</span></span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">print_helloworld</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	std::cout &lt;&lt; <span class="hljs-string">&quot;Hello World&quot;</span> &lt;&lt; std::endl;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-comment">//1.thead crate</span><br>	<span class="hljs-function">std::thread <span class="hljs-title">thread1</span><span class="hljs-params">(print_helloworld)</span></span>;<br><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-              
+<p>运行时发现报错了，这是因为主线程执行结束退出了，而我们创建的线程却还在运行，此时程序会报错；</p>
+<h3 id="等待线程完成"><a href="#等待线程完成" class="headerlink" title="等待线程完成"></a>等待线程完成</h3><p>join()可以用来等待线程执行完毕，主程序不会立即退出，会检查其他线程是否执行了return，如果未执行，则会等待；</p>
+<p>换句话说join阻塞了main()函数执行；</p>
+<p>当我们加上这一句后再运行程序，报错消失了；</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;thread&gt;</span></span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">print_helloworld</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	std::cout &lt;&lt; <span class="hljs-string">&quot;Hello World&quot;</span> &lt;&lt; std::endl;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-comment">//1.thead crate</span><br>	<span class="hljs-function">std::thread <span class="hljs-title">thread1</span><span class="hljs-params">(print_helloworld)</span></span>;<br>	thread1.<span class="hljs-built_in">join</span>();<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="线程传参"><a href="#线程传参" class="headerlink" title="线程传参"></a>线程传参</h3><p>给线程传递参数时需要在线程创建时就为其添加参数；</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function">std::thread <span class="hljs-title">thread1</span><span class="hljs-params">(print_helloworld,<span class="hljs-string">&quot;hello Thread&quot;</span>)</span></span>;<br></code></pre></td></tr></table></figure>
+
+<h3 id="else"><a href="#else" class="headerlink" title="else"></a>else</h3><p>detach()可以让主线程正常退出不报错，运行完main()之后销毁thread1;</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">thread1.<span class="hljs-built_in">detach</span>();<br></code></pre></td></tr></table></figure>
+
+<p>joinable(),detachable()都是检查函数是否可以开启进程的方法，返回bool值</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c++">isJoin=thread1.<span class="hljs-built_in">joinable</span>()<br><span class="hljs-keyword">if</span> (isJoin)<br>&#123;<br>thread1.<span class="hljs-built_in">join</span>();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="2-线程函数中的数据未定义错误"><a href="#2-线程函数中的数据未定义错误" class="headerlink" title="2.线程函数中的数据未定义错误"></a>2.线程函数中的数据未定义错误</h2><h3 id="传递临时变量"><a href="#传递临时变量" class="headerlink" title="传递临时变量"></a>传递临时变量</h3>
+                
+              </div>
             
             <hr/>
             <div>
               <div class="post-metas my-3">
   
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/study/" class="print-no-link">#study</a>
+      
+    </div>
   
 </div>
 
@@ -312,8 +331,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>li_diary</div>
-      <div>http://example.com/2024/01/12/emo-diary/</div>
+      <div>Thead Study</div>
+      <div>http://example.com/2024/03/18/Thead-Study/</div>
     </div>
     <div class="license-meta">
       
@@ -325,7 +344,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年1月12日</div>
+          <div>2024年3月18日</div>
         </div>
       
       
@@ -357,18 +376,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/03/18/%E5%A4%A9%E6%9E%A2ctf-WP/" title="天枢ctf-WP">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">天枢ctf-WP</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/11/09/%E9%9D%9E%E5%B8%B8%E5%A5%BDfrida%EF%BC%8C%E4%BD%BF%E6%88%91%E7%9A%84hook%E6%97%8B%E8%BD%AC%EF%BC%81%EF%BC%81%EF%BC%81%EF%BC%81/" title="鸽了的frida">
-                        <span class="hidden-mobile">鸽了的frida</span>
+                      <a href="/2024/03/18/%E5%A4%A9%E6%9E%A2ctf-WP/" title="天枢ctf-WP">
+                        <span class="hidden-mobile">天枢ctf-WP</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -524,23 +537,6 @@
   
 
 
-
-
-  
-  <script defer>
-    if (document.getElementById('hbePass') || document.querySelector('hbe-prefix')) {
-      Fluid.utils.waitElementLoaded('hbe-prefix', function() {
-        var hbePrefix = document.querySelector('hbe-prefix');
-        hbePrefix.parentElement.classList.add('markdown-body');
-        Fluid.utils.retry(function() {
-          if (Fluid.boot && Fluid.boot.refresh) {
-            Fluid.boot.refresh();
-            return true;
-          }
-        }, 100, 10);
-      })
-    }
-  </script>
 
 
   
